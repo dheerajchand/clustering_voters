@@ -32,9 +32,15 @@ To make things simple, we're going to assume that because of racism made law, mi
 
 # Code
 
-- /inputs gives you a sense of what you will need to do this, which are boundaries from the Census
+- /inputs gives you a sense of what you will need to do this, which are boundaries from the Census.
+    - There are two scripts, `fetch_census.sh` & `load_psql.sh`
+    - Edit the former to only get the boundaries you want.
+    - Edit the latter to set your PSQL permissions and it will load the shapefiles you downloaded.
+    
 - jamaa_clusterings.sql is a very simplified SQL file that shows you what you need to do with your voters table and Census shapefiles to get clusters.
-
+    - Because the geocodes on your file are likely to be garbage, you will need to ensure that the geocodes are actually in the right boundaries.
+    - That's what all the shapefiles you downloaded are for.
+    
 # Next steps 
 
 You can make this really valuable by doing some [boundary estimation](https://www.siegeanalytics.com/features/boundary-estimation/) to turn your clusters into polygons.
