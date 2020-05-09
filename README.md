@@ -36,6 +36,7 @@ To make things simple, we're going to assume that because of racism made law, mi
     - There are two scripts, `fetch_census.sh` & `load_psql.sh`
     - Edit the former to only get the boundaries you want.
     - Edit the latter to set your PSQL permissions and it will load the shapefiles you downloaded.
+    - This is probably a good place to store your VAN export formatted CSV/TSV/whatever.
     
 - jamaa_clusterings.sql is a very simplified SQL file that shows you what you need to do with your voters table and Census shapefiles to get clusters.
     - Because the geocodes on your file are likely to be garbage, you will need to ensure that the geocodes are actually in the right boundaries.
