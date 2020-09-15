@@ -199,6 +199,16 @@ ALTER TABLE collective_nc_export_clustering
 UPDATE collective_nc_export_clustering AS C
 SET targeted_voter = 't'
 WHERE c.general16 IS NULL OR c.general16 = 'f';
+
+/*
+ WHERE NOT (a, b) IS NULL AND NOT (c, d) IS NOT NULL
+
+ this can set targets with more concise syntax at the expense of computation time
+
+ https://dbfiddle.uk/?rdbms=postgres_12&fiddle=d606f479fedbdff29408f92b55eb44fd
+ 
+ */
+
 -- 3d
 
 -- This DBSCAN says you need three people together within 20 meters of each other
@@ -213,7 +223,7 @@ SET cluster_id =
             END
 
 FROM (SELECT cnec."voter file vanid",
-             ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 5)
+             ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
              OVER (ORDER BY cnec."voter file vanid") AS cluster_id
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
