@@ -61,6 +61,15 @@ ALTER TABLE collective_nc_export_clustering
     ADD COLUMN county_label_spatial_matches BOOLEAN DEFAULT TRUE,
     ADD COLUMN state_label_spatial_matches  BOOLEAN DEFAULT TRUE;
 
+
+SELECT c.cluster_id,
+       COUNT(*)
+FROM collective_nc_export_clustering AS c
+GROUP BY c.cluster_id
+ORDER BY c.cluster_id DESC;
+
+SELECT * FROM collective_nc_export_clustering
+LIMIT 1;
 -- 2b
 
 -- SLDL
@@ -205,8 +214,12 @@ WHERE c.general16 IS NULL OR c.general16 = 'f';
 
  this can set targets with more concise syntax at the expense of computation time
 
- https://dbfiddle.uk/?rdbms=postgres_12&fiddle=d606f479fedbdff29408f92b55eb44fd
- 
+SELECT *
+FROM revised_nc_for_clustering rc
+WHERE 'did vote' = ANY(ARRAY[primary20, primary19])
+    AND 'did not vote' = ANY(ARRAY[primary18, primary16])
+
+https://dbfiddle.uk/?rdbms=postgres_12&fiddle=8c1ba8185b992c84034787e9bddd46fc
  */
 
 -- 3d
