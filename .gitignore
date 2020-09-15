@@ -935,3 +935,4 @@ ipython_config.py
 /inputs/voters/*.txt
 /inputs/voters/**/*.*
 inputs/voters/jamaa_with_precincts_VA.txt
+/inputs/Standardcontactwithcodes20200914-9281460646.txt
