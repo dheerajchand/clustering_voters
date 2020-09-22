@@ -389,14 +389,14 @@ CREATE INDEX
  */
 
 -- 3a
-
-DELETE
-FROM collective_nc_export_clustering AS cnec
-WHERE cnec.state_label_spatial_matches = FALSE;
+--
+-- DELETE
+-- FROM collective_nc_export_clustering AS cnec
+-- WHERE cnec.state_label_spatial_matches = FALSE;
 
 ALTER TABLE collective_nc_export_clustering
     DROP COLUMN IF EXISTS cluster_id,
-    ADD COLUMN IF NOT EXISTS cluster_id NUMERIC DEFAULT NULL;
+    ADD COLUMN IF NOT EXISTS cluster_id NUMERIC DEFAULT -1;
 
 ALTER TABLE collective_nc_export_clustering
     DROP COLUMN IF EXISTS targeted_voter,
@@ -404,7 +404,12 @@ ALTER TABLE collective_nc_export_clustering
 
 UPDATE collective_nc_export_clustering AS C
 SET targeted_voter = 't'
-WHERE c.general16 IS NULL OR c.general16 = 'f';
+WHERE
+      c.age::NUMERIC >= 22
+      AND
+      c.racename = 'African-American'
+      AND
+      (c.general16 IS NULL OR c.general16 = 'f');
 
 /*
  WHERE NOT (a, b) IS NULL AND NOT (c, d) IS NOT NULL
@@ -428,6 +433,8 @@ SET cluster_id =
         CASE
             WHEN sq.cluster_id > -1
                 THEN sq.cluster_id
+            WHEN sq.cluster_id IS NULL
+                THEN -1
             ELSE
                 -1
             END
