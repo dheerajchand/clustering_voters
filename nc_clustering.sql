@@ -1,3 +1,200 @@
+/*
+ Step 0: Fix the stupid columns for the VAN imports
+
+
+ */
+
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:Cath" TO "2016:cath";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:ChldPrsnt" TO "2016:chldprsnt";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:ClgFndng" TO "2016:clgfndng";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:CmpgnFnc" TO "2016:cmpgnfnc";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:Evang" TO "2016:evang";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:GvPrvcy" TO "2016:gvprvcy";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:IncRnk" TO "2016:incrnk";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:MnWg" TO "2016:mnwg";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:Mrrg" TO "2016:mrrg";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:NonChrst" TO "2016:nonchrst";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:OthChrst" TO "2016:othchrst";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:PdLv" TO "2016:pdlv";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "2016:TSM:TeaPa" TO "2016:tsm:teapa";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Age" TO age;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "AptNo" TO aptno;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "AptType" TO apttype;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Autho" TO autho;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "BidenSup" TO bidensup;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "CanLeg" TO canleg;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Cell Phone" TO cell_phone;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "City" TO city;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "ClmChng" TO clmchng;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "CollGrd" TO collgrd;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Comp" TO comp;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Cosmo" TO cosmo;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "CountyName" TO countyname;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "CrimJustRef" TO crimjustref;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "DateReg" TO datereg;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Diplomacy" TO diplomacy;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "EarlyVotTim" TO earlyvottim;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "EarlyVote" TO earlyvote;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "EcoPop" TO ecopop;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Env" TO env;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "EthNat" TO ethnat;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "FirstName" TO firstname;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "FrTrd" TO frtrd;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General00" TO general00;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General01" TO general01;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General02" TO general02;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General03" TO general03;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General04" TO general04;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General05" TO general05;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General06" TO general06;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General07" TO general07;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General08" TO general08;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General09" TO general09;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General10" TO general10;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General11" TO general11;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General12" TO general12;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General14" TO general14;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General16" TO general16;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General18" TO general18;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "General19" TO general19;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Glbl" TO glbl;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Guns" TO guns;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "HCWmn" TO hcwmn;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "HSOnly" TO hsonly;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Home Phone" TO home_phone;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Ideo" TO ideo;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Imm" TO imm;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "IncInequ" TO incinequ;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Infrastruct" TO infrastruct;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "InstTrst" TO insttrst;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Jewish" TO jewish;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "LastName" TO lastname;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Latitude" TO latitude;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "LocVo" TO locvo;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Longitude" TO longitude;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MarEqu" TO marequ;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MediaMarketName" TO mediamarketname;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MidGenTO" TO midgento;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MidGenTOEnth" TO midgentoenth;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MiddleName" TO middlename;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Mili" TO mili;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Mormon" TO mormon;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniPrimary13" TO muniprimary13;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniPrimary13Party" TO muniprimary13party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniPrimary15" TO muniprimary15;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniPrimary15Party" TO muniprimary15party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniPrimary17" TO muniprimary17;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniPrimary17Party" TO muniprimary17party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "MuniRunoff17" TO munirunoff17;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal00" TO municipal00;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal01" TO municipal01;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal02" TO municipal02;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal03" TO municipal03;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal04" TO municipal04;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal05" TO municipal05;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal06" TO municipal06;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal07" TO municipal07;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal08" TO municipal08;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal09" TO municipal09;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal10" TO municipal10;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal11" TO municipal11;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal12" TO municipal12;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal13" TO municipal13;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal15" TO municipal15;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal17" TO municipal17;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Municipal19" TO municipal19;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "NonPresPriTO" TO nonpresprito;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "NonRelig" TO nonrelig;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "OffGenTO" TO offgento;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PollingAddress" TO pollingaddress;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PollingCity" TO pollingcity;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Poor" TO poor;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Popu" TO popu;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PrChc" TO prchc;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PrecinctName" TO precinctname;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Preferred Phone" TO preferred_phone;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Pres" TO pres;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PresGenTO" TO presgento;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PresGenTOEnth" TO presgentoenth;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PresPriTO" TO presprito;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PresPrimary00" TO presprimary00;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PresPrimary08" TO presprimary08;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary00" TO primary00;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary01" TO primary01;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary01Party" TO primary01party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary02" TO primary02;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary03" TO primary03;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary03Party" TO primary03party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary04" TO primary04;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary05" TO primary05;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary05Party" TO primary05party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary06" TO primary06;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary07" TO primary07;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary07Party" TO primary07party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary08" TO primary08;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary09" TO primary09;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary09Party" TO primary09party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary10" TO primary10;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary11" TO primary11;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary11Party" TO primary11party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary12" TO primary12;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary12Party" TO primary12party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary14" TO primary14;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary14Party" TO primary14party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary16" TO primary16;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary16Party" TO primary16party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary18" TO primary18;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary18Party" TO primary18party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary19" TO primary19;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary20" TO primary20;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Primary20Party" TO primary20party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "ProgTax" TO progtax;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "PthCit" TO pthcit;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "RacRes" TO racres;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "RaceName" TO racename;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "RecSens" TO recsens;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Reg" TO reg;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "RelFrdm" TO relfrdm;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "SchoolBoard13" TO schoolboard13;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "SchoolBoard17" TO schoolboard17;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Sex" TO sex;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Special19" TO special19;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "SpecialPrimary16" TO specialprimary16;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "SpecialPrimary16Party" TO specialprimary16party;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "SpecialPrimary19" TO specialprimary19;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "State" TO state;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "StreetName" TO streetname;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "StreetNo" TO streetno;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "StreetNoHalf" TO streetnohalf;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "StreetPrefix" TO streetprefix;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "StreetSuffix" TO streetsuffix;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "StreetType" TO streettype;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Suffix" TO suffix;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSM:Part" TO "tsm:part";
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSMAct" TO tsmact;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSMGnCntrl" TO tsmgncntrl;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSMGun" TO tsmgun;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSMTrumpResist" TO tsmtrumpresist;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSMTrumpSup" TO tsmtrumpsup;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSMVet" TO tsmvet;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TSM_Ideo_Enh" TO tsm_ideo_enh;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Tax" TO tax;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Trad" TO trad;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "TrumpDef" TO trumpdef;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "UnionSupport" TO unionsupport;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Urb" TO urb;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "VendorID" TO vendorid;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Voter File VANID" TO voter_file_vanid;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "WorCl" TO worcl;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Zip4" TO zip4;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "Zip5" TO zip5;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "mAddress" TO maddress;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "mCity" TO mcity;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "mState" TO mstate;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "mZip4" TO mzip4;
+-- ALTER TABLE public.revised_nc_for_clustering RENAME "mZip5" TO mzip5;
+
+
 /* STEP 1: Preparing the points table
    a. Duplicate the points table into a table that you can edit so that you maintain original data
    b. Create a geometry column for the voters (points) table
@@ -61,15 +258,15 @@ ALTER TABLE collective_nc_export_clustering
     ADD COLUMN county_label_spatial_matches BOOLEAN DEFAULT TRUE,
     ADD COLUMN state_label_spatial_matches  BOOLEAN DEFAULT TRUE;
 
+/*
+https://www.census.gov/geographies/mapping-files/2019/dec/rdo/116-congressional-district-bef.html
+Census assigns ZZ or ZZZ to no district assigned land areas, like lakes. This will likely never show up in a voter file because all voters live in districts.
+01 to 53—Congressional district codes
+00—At large (single district for state)
+98—Nonvoting delegate
+*/
 
-SELECT c.cluster_id,
-       COUNT(*)
-FROM collective_nc_export_clustering AS c
-GROUP BY c.cluster_id
-ORDER BY c.cluster_id DESC;
 
-SELECT * FROM collective_nc_export_clustering
-LIMIT 1;
 -- 2b
 
 -- SLDL
@@ -78,8 +275,8 @@ LIMIT 1;
 -- SET hd_label_spatial_matches = ST_CONTAINS(sldl.geom, c.geom)
 -- FROM tl_2019_37_sldl AS sldl
 -- WHERE sldl.statefp = '37'
---   AND LPAD(c.hd::TEXT, 3, '0') = sldl.sldlst;
---
+--   AND c.sd::INT = sldl.sldlst::INT;
+-- --
 -- SELECT
 --        c.hd,
 --        COUNT(c.*) AS total_voters,
@@ -235,13 +432,13 @@ SET cluster_id =
                 -1
             END
 
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (ORDER BY cnec."voter file vanid") AS cluster_id
+             OVER (ORDER BY cnec.voter_file_vanid) AS cluster_id
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 -- But statewide clustering is not very useful - we wind up with so many clusters that
 -- we have to start partitioning by smaller geographies to make this useful
@@ -282,13 +479,13 @@ SET cluster_id_within_cd = CASE
                                        cnec.cd || '-' || sq.cluster_id_within_cd::TEXT
                                ELSE '-1'
     END
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (PARTITION BY cnec.cd ORDER BY cnec."voter file vanid") AS cluster_id_within_cd
+             OVER (PARTITION BY cnec.cd ORDER BY cnec.voter_file_vanid) AS cluster_id_within_cd
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 -- DBSCAN within SD
 
@@ -300,13 +497,13 @@ SET cluster_id_within_sd = CASE
                                        cnec.sd || '-' || sq.cluster_id_within_sd::TEXT
                                ELSE '-1'
     END
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (PARTITION BY cnec.sd ORDER BY cnec."voter file vanid") AS cluster_id_within_sd
+             OVER (PARTITION BY cnec.sd ORDER BY cnec.voter_file_vanid) AS cluster_id_within_sd
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 
 UPDATE collective_nc_export_clustering AS cnec
@@ -316,13 +513,13 @@ SET cluster_id_within_hd = CASE
                                        cnec.hd || '-' || sq.cluster_id_within_hd::TEXT
                                ELSE '-1'
     END
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (PARTITION BY cnec.hd ORDER BY cnec."voter file vanid") AS cluster_id_within_hd
+             OVER (PARTITION BY cnec.hd ORDER BY cnec.voter_file_vanid) AS cluster_id_within_hd
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 -- DBSCAN by precinct Within CD
 
@@ -359,13 +556,13 @@ SET cluster_id_within_cd_and_precinct = CASE
                                                     sq.cluster_id_within_cd_and_precinct::TEXT
                                             ELSE '-1'
     END
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (PARTITION BY cnec.cd, cnec.precinctname ORDER BY cnec."voter file vanid") AS cluster_id_within_cd_and_precinct
+             OVER (PARTITION BY cnec.cd, cnec.precinctname ORDER BY cnec.voter_file_vanid) AS cluster_id_within_cd_and_precinct
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 -- DBSCAN within SD and Precinct
 
@@ -377,13 +574,13 @@ SET cluster_id_within_sd_and_precinct = CASE
                                                     sq.cluster_id_within_sd_and_precinct::TEXT
                                             ELSE '-1'
     END
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (PARTITION BY cnec.sd, cnec.precinctname ORDER BY cnec."voter file vanid") AS cluster_id_within_sd_and_precinct
+             OVER (PARTITION BY cnec.sd, cnec.precinctname ORDER BY cnec.voter_file_vanid) AS cluster_id_within_sd_and_precinct
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 -- DBSCAN WITHIN HD and Precinct
 
@@ -395,13 +592,13 @@ SET cluster_id_within_hd_and_precinct = CASE
                                                     sq.cluster_id_within_hd_and_precinct::TEXT
                                             ELSE '-1'
     END
-FROM (SELECT cnec."voter file vanid",
+FROM (SELECT cnec.voter_file_vanid,
              ST_ClusterDBSCAN(cnec.geom, eps := 20, minPoints := 3)
-             OVER (PARTITION BY cnec.hd, cnec.precinctname ORDER BY cnec."voter file vanid") AS cluster_id_within_hd_and_precinct
+             OVER (PARTITION BY cnec.hd, cnec.precinctname ORDER BY cnec.voter_file_vanid) AS cluster_id_within_hd_and_precinct
       FROM collective_nc_export_clustering AS cnec
       WHERE cnec.targeted_voter = 't'
      ) AS sq
-WHERE cnec."voter file vanid" = sq."voter file vanid";
+WHERE cnec.voter_file_vanid = sq.voter_file_vanid;
 
 /*
  Step 6: Create distinct tables for each dataset of clusters. This is really bad boundary estimation because
@@ -458,8 +655,5 @@ WHERE cnec."voter file vanid" = sq."voter file vanid";
 --     WHERE jvm.cluster_id_within_hd_and_precinct != '-1'
 --     GROUP BY jvm.cluster_id_within_hd_and_precinct
 -- );
-
-
-
 
 
